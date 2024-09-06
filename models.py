@@ -29,12 +29,4 @@ class Order(Base):
     user_id = Column(Integer, ForeignKey('user.id',ondelete='CASCADE'))
     user = relationship('User', back_populates='orders')
     
-class Posts(Base):
-    __tablename__ = "posts"
-    id = Column(Integer, primary_key=True,autoincrement=True, nullable=False)
-    user_id = Column(Integer, ForeignKey("user.id",ondelete="CASCADE"),nullable=False)
-    title = Column(String(300),nullable=False)
-    content = Column(Text, nullable = False)
-    published = Column(Boolean, default=True)
-    #used to get the information of the owner of a particular post
-    owner = relationship("User")
+

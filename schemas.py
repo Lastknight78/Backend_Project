@@ -1,8 +1,8 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import Optional
 class Signup(BaseModel):
     username : str
-    email : str
+    email : EmailStr
     password : str
     is_staff : Optional[bool] = False
     is_active : Optional[bool] = False
